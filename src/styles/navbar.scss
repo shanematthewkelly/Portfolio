@@ -1,0 +1,61 @@
+/** Imports **/
+@import "./mixins.scss";
+@import "./layout.scss";
+
+/** Navigation **/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  top: 0;
+  width: 100vw;
+  position: fixed;
+  height: 4rem;
+
+  .navbar-nav {
+    background-color: transparent;
+    padding: 1rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .nav-item {
+      list-style: none;
+      margin-right: 4rem;
+
+      .nav-text {
+        @include nav-text();
+      }
+
+      .contact-nav {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+
+        border-radius: 20rem;
+        background-color: transparent;
+        border-color: $primaryColor;
+        border-width: 4px;
+
+        @include nav-text();
+      }
+    }
+  }
+}
+
+.app-logo {
+  margin-right: auto;
+  margin-left: 2rem;
+  list-style: none;
+
+  @include nav-text();
+}
+
+.nav-text {
+  @include nav-text();
+}

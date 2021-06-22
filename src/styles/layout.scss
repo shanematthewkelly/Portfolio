@@ -1,26 +1,32 @@
-// App Colors
-$canvas: hsl(0°, 0%, 7%);
-$primaryColor: hsl(144°, 63%, 52%);
+/** Fonts & Imports **/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-// Globals
-@mixin richText {
-  font-size: 4rem;
-  text-align: center;
-  @media (max-width: 1440px) {
-    font-size: 3rem;
-  }
-}
+@import "./mixins.scss";
 
+/** Global Variables **/
+$canvas: rgb(25, 25, 25);
+$primaryColor: rgb(55, 210, 117);
+
+/** Layout **/
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @include browser-defaults();
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: $canvas;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+body::-webkit-scrollbar-thumb {
+  // TODO: Change
+  background: red;
 }
 
 .centered-container {
@@ -31,12 +37,12 @@ body {
 }
 
 .rich-text {
-  @include richText();
+  @include rich-text();
   color: $primaryColor;
 }
 
 .rich-text-2 {
-  @include richText();
+  @include rich-text();
   color: white;
 }
 

@@ -1,69 +1,33 @@
 /** Fonts & Imports **/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
 
-@import "./mixins.scss";
-
-/** Global Variables **/
-$canvas: rgb(25, 25, 25);
-$primaryColor: rgb(55, 210, 117);
+@import "@styles/mixins.scss";
+@import "@styles/theme.scss";
 
 /** Layout **/
 body {
   @include browser-defaults();
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
   background-color: $canvas;
 }
 
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.3rem;
 }
 
 body::-webkit-scrollbar-track {
-  background: #111111;
+  background: $canvas;
 }
 
 body::-webkit-scrollbar-thumb {
-  // TODO: Change
-  background: red;
+  background-color: $scrollbarColor;
+  border-radius: 20rem;
 }
 
-.centered-container {
+section {
   height: 100vh;
-  display: grid;
-  place-items: center;
-  z-index: 10;
-}
-
-.rich-text {
-  @include rich-text();
-  color: $primaryColor;
-}
-
-.rich-text-2 {
-  @include rich-text();
-  color: white;
-}
-
-.desc-header {
-  color: lightgrey;
-  font-size: 1rem;
-  text-align: center;
-}
-
-#content {
-  position: absolute;
-  left: 30%;
-  top: 40%;
-  z-index: 0;
-}
-
-.hide {
-  position: absolute;
-  background-color: rgb(25, 25, 25);
-  height: 50px;
-  width: 50px;
-  right: 0;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }

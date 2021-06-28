@@ -5,6 +5,7 @@
         ["@components", "./src/components"],
         ["@styles", "./src/styles"],
         ["@pages", "./src/pages"],
+        ["@sections", "./src/pages/sections"],
         ["@images", "./src/images"]
       ]
     }

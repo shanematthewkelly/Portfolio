@@ -1,6 +1,5 @@
-/** Imports **/
-@import "./mixins.scss";
-@import "./layout.scss";
+@import "@styles/mixins.scss";
+@import "@styles/layout.scss";
 
 /** Navigation **/
 * {
@@ -14,6 +13,7 @@
   width: 100vw;
   position: fixed;
   height: 4rem;
+  padding-top: 1rem;
 
   .navbar-nav {
     background-color: transparent;
@@ -26,23 +26,24 @@
     .nav-item {
       list-style: none;
       margin-right: 4rem;
-
-      .nav-text {
-        @include nav-text();
+      @media all and (max-width: 768px) {
+        margin-right: 0;
       }
 
-      .contact-nav {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-top: 0.3rem;
-        padding-bottom: 0.3rem;
+      .nav-num {
+        @include nav-num();
+        @include no-display-mobile();
 
-        border-radius: 20rem;
-        background-color: transparent;
-        border-color: $primaryColor;
-        border-width: 4px;
+        .nav-text {
+          @include nav-text();
+          @include no-display-mobile();
+        }
 
-        @include nav-text();
+        .nav-text:hover {
+          color: $primaryColor;
+          border-bottom: 2px dashed $primaryColor;
+          padding-bottom: 6px;
+        }
       }
     }
   }
@@ -58,4 +59,15 @@
 
 .nav-text {
   @include nav-text();
+}
+
+.nav-menu {
+  @include icon-theme();
+  margin-right: 2rem;
+}
+
+#nav-mobile-menu {
+  @media all and (min-width: 850px) {
+    display: none;
+  }
 }

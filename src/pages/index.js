@@ -1,21 +1,37 @@
-import * as React from "react";
-import Nav from "@components/nav";
+import React from "react";
+
+import Navbar from "@components/Navbar";
+import Intro from "@pages/Intro";
+import About from "@sections/About";
+import Work from "@sections/Work";
+import Experience from "@sections/Experience";
+import Contact from "@sections/Contact";
 
 import '@styles/layout.scss';
 
+const IndexPage = () => {
+  return (
+    <>
+      <Navbar />
+      <Intro />
 
-const IndexPage = () => (
-  <>
-    <Nav />
-    <div className="centered-container">
-      <div className="hide"></div>
-      <iframe src='https://my.spline.design/first-f22e5e1d3db67df39f06be265a5b906d/' frameborder='0' width='100%' height='100%'></iframe>      <div id="content">
-        <h1 className="rich-text">Hi
-          <span className="rich-text-2">, my name is Shane.</span></h1>
-        <h3 className="desc-header">[ Drag mouse to rotate ]</h3>
-      </div>
-    </div>
-  </>
-)
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="work">
+        <Work />
+      </section>
+
+      <section id="experience">
+        <Experience />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+    </>
+  )
+}
 
 export default IndexPage

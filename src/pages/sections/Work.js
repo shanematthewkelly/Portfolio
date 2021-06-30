@@ -1,9 +1,10 @@
 import React from 'react';
+import { Section } from '@sections/About';
 
 const Work = () => {
     return (
         <>
-            <div className="in-touch-btn">Work section</div>
+            <Section>Work section</Section>
         </>
     )
 }

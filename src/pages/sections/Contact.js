@@ -1,9 +1,10 @@
 import React from 'react';
+import { Section } from '@sections/About';
 
 const Contact = () => {
     return (
         <>
-            <div className="in-touch-btn">Contact section</div>
+            <Section>Contact Section</Section>
         </>
     )
 }

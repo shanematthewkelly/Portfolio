@@ -1,8 +1,9 @@
-/** Elements **/
-@mixin primary-button {
+import { css } from 'styled-components';
+
+export const PrimaryButton = css`
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  border: 3px dashed $primaryColor;
+  border: 3px dashed rgb(55, 210, 117);;
   text-align: center;
 
   font-family: "Montserrat", sans-serif;
@@ -14,55 +15,57 @@
   @media all and (max-width: 400px) {
     font-size: 0.8rem;
   }
-}
 
-@mixin icon-theme {
-  color: $primaryColor;
+  &:hover {
+    background-color: rgba(55, 210, 117, 0.082);
+  }
+
+`;
+
+export const IconTheme = css`
+  color: rgb(55, 210, 117);
   font-size: 2rem;
+  margin-right: 1rem;
 
   @media all and (max-width: 400px) {
     font-size: 1.2rem;
   }
-}
+`;
 
-/** Global Media Constraints **/
-@mixin no-display-mobile {
+export const HideOnMobile = css`
   @media all and (max-width: 850px) {
     display: none;
   }
-}
+`;
 
-/** Layout.scss **/
-@mixin rich-text {
+export const RichText = css`
   font-size: 3rem;
   text-align: center;
 
   @media all and (max-device-width: 500px) {
     font-size: 1.8rem;
-  }
 }
+`;
 
-@mixin browser-defaults {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-}
-
-/** Navbar.scss **/
-@mixin nav-text {
+export const NavText = css`
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: white;
+  font-size: 0.85rem;
   text-transform: uppercase;
-}
 
-@mixin nav-num {
+  &:hover {
+    color: rgb(55, 210, 117);
+    border-bottom: 2px dashed rgb(55, 210, 117);;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+`;
+
+export const NavNums = css`
   font-family: "Orbitron" sans-serif !important;
   text-transform: uppercase;
+  font-size: 0.85rem;
   text-decoration: none;
-  color: $primaryColor;
-}
+  color: rgb(55, 210, 117);
+`;

@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import cursor from '@images/cursor.png';
 
 export const PrimaryButton = css`
   padding-top: 0.6rem;
@@ -9,8 +10,8 @@ export const PrimaryButton = css`
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: white;
+  cursor: url(${cursor}), pointer;
   text-transform: uppercase;
-  cursor: pointer;
 
   @media all and (max-width: 400px) {
     font-size: 0.8rem;
@@ -59,6 +60,7 @@ export const NavText = css`
     border-bottom: 2px dashed rgb(55, 210, 117);;
     padding-bottom: 6px;
     cursor: pointer;
+
 }
 `;
 

@@ -1,35 +1,47 @@
 import React from "react";
 
 import Navbar from "@components/Navbar";
-import Intro from "@pages/Intro";
+import Intro from "@sections/Intro";
 import About from "@sections/About";
 import Work from "@sections/Work";
 import Experience from "@sections/Experience";
 import Contact from "@sections/Contact";
 
 import '@styles/layout.scss';
+import styled from "styled-components";
+
+const AppSection = styled.section`
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+`;
 
 const IndexPage = () => {
   return (
     <>
       <Navbar />
-      <Intro />
+      <AppSection id="intro">
+        <Intro />
+      </AppSection>
 
-      <section id="about">
+      <AppSection id="about">
         <About />
-      </section>
+      </AppSection>
 
-      <section id="work">
+      <AppSection id="work">
         <Work />
-      </section>
+      </AppSection>
 
-      <section id="experience">
+      <AppSection id="experience">
         <Experience />
-      </section>
+      </AppSection>
 
-      <section id="contact">
+      <AppSection id="contact">
         <Contact />
-      </section>
+      </AppSection>
     </>
   )
 }

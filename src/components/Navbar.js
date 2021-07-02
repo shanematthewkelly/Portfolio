@@ -103,7 +103,7 @@ const Navbar = () => {
           </AppLogo>
 
           <NavItem>
-            <NavbarNum>01.&nbsp;
+            <NavbarNum href="#about">01.&nbsp;
               <NavbarText>
                 About
               </NavbarText>
@@ -111,7 +111,7 @@ const Navbar = () => {
           </NavItem>
 
           <NavItem>
-            <NavbarNum>02.&nbsp;
+            <NavbarNum href="#work">02.&nbsp;
               <NavbarText>
                 Work
               </NavbarText>
@@ -119,7 +119,7 @@ const Navbar = () => {
           </NavItem>
 
           <NavItem>
-            <NavbarNum>03.&nbsp;
+            <NavbarNum href="#experience">03.&nbsp;
               <NavbarText>
                 Experience
               </NavbarText>
@@ -127,7 +127,7 @@ const Navbar = () => {
           </NavItem>
 
           <NavItem>
-            <NavbarNum>04.&nbsp;
+            <NavbarNum href="#contact">04.&nbsp;
               <NavbarText>
                 Contact
               </NavbarText>

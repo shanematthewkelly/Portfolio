@@ -1,17 +1,19 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
-
 import { RichText, PrimaryButton } from '@components/Mixins';
+import { FadeIn, FadeInDown, FadeInUp } from '@components/Animations';
+
+import styled from 'styled-components';
 import version from '@images/versioning.png'
+
 import '@styles/layout.scss';
 
 const CenteredContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   display: grid;
   place-items: center;
-  z-index: 0;
 `;
 
 const AppVersion = styled.img`
@@ -37,12 +39,14 @@ const HideSpline = styled.div`
   width: 50px;
   right: 0;
   bottom: 0;
+  z-index: 10;
 `;
 
 const LoadSpline = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
+  animation: ${FadeIn} 3.0s ease-in forwards;
 `;
 
 const HTMLContent = styled.div`
@@ -57,7 +61,7 @@ const HTMLContent = styled.div`
   justify-content: center;
   position: absolute;
   width: 40%;
-  top: 45%;
+  top: 40%;
 
   @media all and (max-width: 768px) {
     top: 40%;
@@ -67,11 +71,13 @@ const HTMLContent = styled.div`
 
 const RichText1 = styled.h1`
   ${RichText};
+  animation: ${FadeInDown} 2.0s ease-in forwards;
   color: rgb(55, 210, 117);
 `;
 
 const RichText2 = styled.span`
   ${RichText};
+  animation: ${FadeInDown} 2.0s ease-in forwards;
   color: #fff;
 `;
 
@@ -79,6 +85,7 @@ const Description = styled.h3`
   color: lightgrey;
   font-size: 1rem;
   text-align: center;
+  animation: ${FadeInDown} 2.0s ease-in forwards;
 
   @media all and (max-width: 500px) {
     margin-top: 8px;
@@ -90,6 +97,7 @@ const ContactButton = styled.div`
   ${PrimaryButton};
   margin-top: 3rem;
   width: 40%;
+  animation: ${FadeInUp} 2.0s ease-in forwards;
 
   @media all and (max-width: 500px) {
     width: 50%;
@@ -104,27 +112,31 @@ const NextScrollArrow = styled.div`
 `;
 
 const Intro = () => {
-    return (
-        <CenteredContainer>
-            <AppVersion src={version} />
-            <HideSpline />
-            <LoadSpline src='https://my.spline.design/untitled-2e527db8a1daad763bf5446f9a024746/' />
+  return (
+    <CenteredContainer>
+      {/* <AppVersion src={version} /> */}
+      <HideSpline />
+      <LoadSpline src='https://my.spline.design/untitled-2e527db8a1daad763bf5446f9a024746/' />
 
-            <HTMLContent>
-                <RichText1>Hi
-                    <RichText2>, my name is Shane.</RichText2>
-                </RichText1>
-                <Description>[ Drag mouse to rotate ]</Description>
-                <ContactButton>Get in touch</ContactButton>
-            </HTMLContent>
+      <HTMLContent>
+        <RichText1>Hi
+          <RichText2>, my name is Shane.</RichText2>
+        </RichText1>
+        {typeof window !== 'undefined' && window.innerWidth < 850 ?
+          <Description>[ Drag finger to rotate ]</Description>
+          :
+          <Description>[ Drag mouse to rotate ]</Description>
+        }
+        <ContactButton>Get in touch</ContactButton>
+      </HTMLContent>
 
-            <NextScrollArrow>
-                <a href="#about">
-                    <FontAwesomeIcon className="icon" icon={faChevronDown} />
-                </a>
-            </NextScrollArrow>
-        </CenteredContainer>
-    )
+      <NextScrollArrow>
+        <a href="#about">
+          <FontAwesomeIcon className="icon" icon={faChevronDown} />
+        </a>
+      </NextScrollArrow>
+    </CenteredContainer>
+  )
 }
 
 export default Intro;

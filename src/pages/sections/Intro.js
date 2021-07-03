@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { RichText, PrimaryButton } from '@components/Mixins';
-import { FadeIn, FadeInDown, FadeInUp } from '@components/Animations';
-
+import { FadeInDown, FadeInUp } from '@components/Animations';
 import styled from 'styled-components';
-import version from '@images/versioning.png'
+import loadable from '@loadable/component'
 
+import HERO_SCENE from '../../scenes/hero/scene.json';
 import '@styles/layout.scss';
 
 const CenteredContainer = styled.div`
@@ -14,39 +14,6 @@ const CenteredContainer = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
-`;
-
-const AppVersion = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 130px;
-  margin-left: -25px;
-  margin-top: -20px;
-  z-index: 10;
-
-  @media all and (max-width: 400px) {
-    width: 90px;
-    margin-left: -15px;
-    margin-top: -15px;
-  }
-`;
-
-const HideSpline = styled.div`
-  position: absolute;
-  background-color: rgb(25, 25, 25);
-  height: 50px;
-  width: 50px;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-`;
-
-const LoadSpline = styled.iframe`
-  width: 100%;
-  height: 100%;
-  border: none;
-  animation: ${FadeIn} 3.0s ease-in forwards;
 `;
 
 const HTMLContent = styled.div`
@@ -111,31 +78,40 @@ const NextScrollArrow = styled.div`
   left: 48.5%;
 `;
 
+/** Loading React-Spline Client-Side in a seperate bundle (requires window object) */
+const Spline = loadable(() =>
+  import('react-spline')
+    .then((res) =>
+      res.Spline),
+  { ssr: false }
+);
+
 const Intro = () => {
+
   return (
-    <CenteredContainer>
-      {/* <AppVersion src={version} /> */}
-      <HideSpline />
-      <LoadSpline src='https://my.spline.design/untitled-2e527db8a1daad763bf5446f9a024746/' />
+    <>
+      <Spline scene={HERO_SCENE} id="hero" />
 
-      <HTMLContent>
-        <RichText1>Hi
-          <RichText2>, my name is Shane.</RichText2>
-        </RichText1>
-        {typeof window !== 'undefined' && window.innerWidth < 850 ?
-          <Description>[ Drag finger to rotate ]</Description>
-          :
-          <Description>[ Drag mouse to rotate ]</Description>
-        }
-        <ContactButton>Get in touch</ContactButton>
-      </HTMLContent>
+      <CenteredContainer>
+        <HTMLContent>
+          <RichText1>Hi
+            <RichText2>, my name is Shane.</RichText2>
+          </RichText1>
+          {typeof window !== 'undefined' && window.innerWidth < 850 ?
+            <Description>[ Drag finger to rotate ]</Description>
+            :
+            <Description>[ Drag mouse to rotate ]</Description>
+          }
+          <ContactButton>Get in touch</ContactButton>
+        </HTMLContent>
 
-      <NextScrollArrow>
-        <a href="#about">
-          <FontAwesomeIcon className="icon" icon={faChevronDown} />
-        </a>
-      </NextScrollArrow>
-    </CenteredContainer>
+        <NextScrollArrow>
+          <a href="#about">
+            <FontAwesomeIcon className="icon" icon={faChevronDown} />
+          </a>
+        </NextScrollArrow>
+      </CenteredContainer>
+    </>
   )
 }
 

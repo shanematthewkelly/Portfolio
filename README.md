@@ -4,14 +4,30 @@
 
 <p>2. <code>cd</code> into the project directory and run <code>gatsby develop</code> to start the dev server on localhost:8000.</p>
 
+<br>
+
+## Production
+
+<p>The production website can be visited at: <code>https://about.shanekellydev.com</code> </p>
+  
+  <br>
+
 ## ToDo (Ignore)
 
-❌ Start on 'About' section (...working on)
+❌ Start on 'About' section [...working on[
+
 <br>
+
 ❌ Finish mobile menu info
+
 <br>
+
 ❌ Continue to optimise
+
 <br>
+
 ❌ Make responsive for tablet
+
 <br>
+
 ❌ Load CSS correctly for SSR

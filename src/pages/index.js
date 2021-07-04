@@ -23,25 +23,27 @@ const IndexPage = () => {
     <>
       <Globals />
       <Navbar />
-      <AppSection id="intro">
-        <Intro />
-      </AppSection>
+      <div id="app-content">
+        <AppSection id="intro">
+          <Intro />
+        </AppSection>
 
-      <AppSection id="about">
-        <About />
-      </AppSection>
+        <AppSection id="about">
+          <About />
+        </AppSection>
 
-      <AppSection id="work">
-        <Work />
-      </AppSection>
+        <AppSection id="work">
+          <Work />
+        </AppSection>
 
-      <AppSection id="experience">
-        <Experience />
-      </AppSection>
+        <AppSection id="experience">
+          <Experience />
+        </AppSection>
 
-      <AppSection id="contact">
-        <Contact />
-      </AppSection>
+        <AppSection id="contact">
+          <Contact />
+        </AppSection>
+      </div>
     </>
   )
 }

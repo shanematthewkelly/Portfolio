@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 const MobileMenu = styled.div`
   display: none;
@@ -104,6 +105,9 @@ const MobileNav = () => {
   return (
     <>
       <MobileMenu>
+        <Helmet>
+          <body className={openMenu ? 'blur' : ''}></body>
+        </Helmet>
         <Burger
           openMenu={openMenu}
           onClick={menuToggle}>

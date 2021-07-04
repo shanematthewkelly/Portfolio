@@ -22,6 +22,16 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--canvas);
+
+  &.blur {
+    overflow: hidden;
+
+    #app-content > * {
+      filter: blur(5px) brightness(0.7);
+      pointer-events: none;
+      user-select: none;
+    }
+  }
 }
 
 body::-webkit-scrollbar {

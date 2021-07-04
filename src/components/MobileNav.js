@@ -75,18 +75,44 @@ const Burger = styled.div`
 }
 `;
 
+const SidebarMenu = styled.aside`
+  display: none;
+
+  @media (max-width: 850px) {
+    position: fixed;
+    height: 100vh;
+    width: min(75vw, 350px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--secondaryColor);
+    box-shadow: 0px 4px 8px 0px black;
+    outline: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: ${({ openMenu }) => openMenu ? 'visible' : 'hidden'};
+  }
+`;
+
 const MobileNav = () => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  const menuToggle = () => setOpenMenu(!openMenu);
+
   return (
     <>
       <MobileMenu>
         <Burger
           openMenu={openMenu}
-          onClick={() => setOpenMenu(!openMenu)}>
+          onClick={menuToggle}>
           <div className="burger">
             <div className="burger-middle" />
           </div>
         </Burger>
+        <SidebarMenu openMenu={openMenu}>
+        </SidebarMenu>
       </MobileMenu>
     </>
   )

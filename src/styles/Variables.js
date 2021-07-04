@@ -4,6 +4,7 @@ const Variables = css`
     :root {
         --canvas: rgb(25, 25, 25);
         --primaryColor: rgb(55, 210, 117);
+        --secondaryColor: rgb(17, 17, 17);
         --scrollbarColor: rgb(102, 102, 102);
         --button-hover: rgba(55, 210, 117, 0.082);
 

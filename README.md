@@ -7,7 +7,11 @@
 ## ToDo (Ignore)
 
 ❌ Start on 'About' section (...working on)
+<br>
 ❌ Finish mobile menu info
+<br>
 ❌ Continue to optimise
+<br>
 ❌ Make responsive for tablet
+<br>
 ❌ Load CSS correctly for SSR

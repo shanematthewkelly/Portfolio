@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import Navbar from "@components/Navbar";
 import Intro from "@sections/Intro";
@@ -6,9 +7,7 @@ import About from "@sections/About";
 import Work from "@sections/Work";
 import Experience from "@sections/Experience";
 import Contact from "@sections/Contact";
-
-import '@styles/layout.scss';
-import styled from "styled-components";
+import Globals from "@styles/Globals";
 
 const AppSection = styled.section`
   min-height: 100vh;
@@ -22,6 +21,7 @@ const AppSection = styled.section`
 const IndexPage = () => {
   return (
     <>
+      <Globals />
       <Navbar />
       <AppSection id="intro">
         <Intro />

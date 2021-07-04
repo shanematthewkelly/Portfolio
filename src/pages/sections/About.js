@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PrimaryButton } from '@components/Mixins';
+import { PrimaryButton } from '@styles/Mixins';
 
 export const Section = styled.div`
   ${PrimaryButton};

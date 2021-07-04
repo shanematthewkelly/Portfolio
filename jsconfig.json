@@ -7,7 +7,9 @@
       "@pages": ["src/pages"],
       "@sections": ["src/pages/sections"],
       "@images": ["src/images"],
-      "@scenes": ["src/scenes"]
+      "@scenes": ["src/scenes"],
+      "@animations": ["src/animations"],
+      "@fonts": ["src/fonts"]
     }
   }
 }

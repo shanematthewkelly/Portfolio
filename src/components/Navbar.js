@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEquals } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
+import { NavText, NavNums, HideOnMobile, IconTheme } from '@styles/Mixins';
+import MobileNav from '@components/MobileNav';
 
-import { NavText, NavNums, HideOnMobile, IconTheme } from '@components/Mixins';
-import '@styles/layout.scss';
+import styled from 'styled-components';
 
 const Nav = styled.nav`
   box-shadow: ${({ navScroll }) =>
-    (navScroll ? '0px 4px 14px 0px #111111;' : '0px 0px 0px 0px transparent;')};
+    (navScroll ? 'var(--nav-scroll-shadow)' : '')};
   background-color: ${({ navScroll }) =>
-    (navScroll ? 'rgb(25, 25, 25, 0.9);' : 'transparent')};
+    (navScroll ? 'var(--nav-scroll);' : 'transparent')};
   transition: ${({ navScroll }) =>
     (navScroll ? '0.3s ease-in' : '0.3s ease-out')}; 
     backdrop-filter: ${({ navScroll }) =>
@@ -22,7 +20,7 @@ const Nav = styled.nav`
   height: 4.5rem;
   z-index: 2;
   @media all and (max-width: 768px) {
-    height: 3.8rem;
+    height: 4.2rem;
   }
 `;
 
@@ -32,9 +30,10 @@ const NavContainer = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 100%;
 
   @media all and (max-width: 768px) {
-    padding: 1.2rem 0;
+    padding: 0.0rem 0;
   }
 `;
 
@@ -135,9 +134,7 @@ const Navbar = () => {
           </NavItem>
 
           {/* Mobile Menu */}
-          <MobileMenu>
-            <FontAwesomeIcon className="nav-menu" icon={faEquals} />
-          </MobileMenu>
+          <MobileNav />
         </NavContainer>
       </Nav>
     </>

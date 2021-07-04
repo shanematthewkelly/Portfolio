@@ -4,7 +4,7 @@ import cursor from '@images/cursor.png';
 export const PrimaryButton = css`
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  border: 3px dashed rgb(55, 210, 117);;
+  border: 3px dashed var(--primaryColor);
   text-align: center;
 
   font-family: "Montserrat", sans-serif;
@@ -18,18 +18,18 @@ export const PrimaryButton = css`
   }
 
   &:hover {
-    background-color: rgba(55, 210, 117, 0.082);
+    background-color: var(--button-hover);
   }
 
 `;
 
 export const IconTheme = css`
-  color: rgb(55, 210, 117);
+  color: var(--primaryColor);
   font-size: 2rem;
   margin-right: 1rem;
 
-  @media all and (max-width: 400px) {
-    font-size: 1.2rem;
+  @media all and (max-width: 850px) {
+    font-size: 1.6rem;
   }
 `;
 
@@ -56,11 +56,10 @@ export const NavText = css`
   text-transform: uppercase;
 
   &:hover {
-    color: rgb(55, 210, 117);
-    border-bottom: 2px dashed rgb(55, 210, 117);;
+    color: var(--primaryColor);
+    border-bottom: 2px dashed var(--primaryColor);
     padding-bottom: 6px;
     cursor: pointer;
-
 }
 `;
 
@@ -69,5 +68,5 @@ export const NavNums = css`
   text-transform: uppercase;
   font-size: 0.85rem;
   text-decoration: none;
-  color: rgb(55, 210, 117);
+  color: var(--primaryColor);
 `;

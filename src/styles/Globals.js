@@ -1,7 +1,10 @@
-/** Theme **/
-$canvas: rgb(25, 25, 25);
-$primaryColor: rgb(55, 210, 117);
-$scrollbarColor: rgb(102, 102, 102);
+import Variables from "@styles/Variables";
+import Fonts from "@styles/Fonts";
+import { createGlobalStyle } from "styled-components";
+
+const Globals = createGlobalStyle`
+${Variables}
+${Fonts}
 
 * {
   box-sizing: border-box;
@@ -18,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: $canvas;
+  background-color: var(--canvas);
 }
 
 body::-webkit-scrollbar {
@@ -26,16 +29,16 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: $canvas;
+  background: var(--canvas);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $scrollbarColor;
+  background-color: var(--scrollbarColor);
   border-radius: 20rem;
 }
 
 .icon {
-  color: $primaryColor;
+  color: var(--primaryColor);
   font-size: 2rem;
 
   @media all and (max-width: 400px) {
@@ -47,12 +50,12 @@ body::-webkit-scrollbar-thumb {
 #work,
 #contact {
   position: relative;
-  background-color: $canvas;
+  background-color: var(--canvas);
 }
 
 #about {
   position: relative;
-  background-color: $canvas;
+  background-color: var(--canvas);
   border-top: solid 2px #111111;
 }
 
@@ -73,9 +76,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 #hero {
-  animation-duration: 3s;
+  animation-duration: 5s;
   animation-name: fadeIn;
+  animation-timing-function: "ease-in forward";
 }
 
-/** Fonts & Imports **/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+`;
+
+export default Globals;

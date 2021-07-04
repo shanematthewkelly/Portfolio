@@ -1,5 +1,6 @@
-import { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+/** Animations */
 export const FadeIn = keyframes`
 from {
   opacity: 0;
@@ -33,3 +34,4 @@ export const FadeInUp = keyframes`
       transform: translateY(0);
   }
 `;
+

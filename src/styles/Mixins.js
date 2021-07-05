@@ -64,9 +64,29 @@ export const NavText = css`
 `;
 
 export const NavNums = css`
-  font-family: "Orbitron" sans-serif !important;
   text-transform: uppercase;
   font-size: 0.85rem;
   text-decoration: none;
   color: var(--primaryColor);
+`;
+
+export const SectionHeadings = css`
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+`;
+
+export const SectionNumbers = css`
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--primaryColor);
+`;
+
+export const ScenePositioning = css`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -21,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: var(--canvas);
+  background-color: var(--secondaryColor);
 
   &.blur {
     overflow: hidden;
@@ -89,6 +89,12 @@ body::-webkit-scrollbar-thumb {
   animation-duration: 5s;
   animation-name: fadeIn;
   animation-timing-function: "ease-in forward";
+}
+
+#about-spline {
+  width: 140% !important;
+  height: 140% !important;
+  margin-left: -135px;
 }
 
 `;

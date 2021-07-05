@@ -11,10 +11,15 @@ import Globals from "@styles/Globals";
 
 const AppSection = styled.section`
   min-height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+`;
+
+const GridSection = styled.section`
+  min-height: 100vh;
+  width: 100%;
   color: #fff;
 `;
 
@@ -28,9 +33,9 @@ const IndexPage = () => {
           <Intro />
         </AppSection>
 
-        <AppSection id="about">
+        <GridSection id="about">
           <About />
-        </AppSection>
+        </GridSection>
 
         <AppSection id="work">
           <Work />

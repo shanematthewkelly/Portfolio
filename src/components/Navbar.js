@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavText, NavNums, HideOnMobile, IconTheme } from '@styles/Mixins';
+import { NavText, NavNums, HideOnMobile } from '@styles/Mixins';
 import MobileNav from '@components/MobileNav';
 
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ const Nav = styled.nav`
     (navScroll ? 'blur(10px)' : 'none')}; 
     
   top: 0;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   height: 4.5rem;
   z-index: 2;
@@ -61,15 +61,6 @@ const NavbarNum = styled.a`
   ${NavNums}
 `;
 
-const MobileMenu = styled.li`
-  ${IconTheme}
-  list-style: none;
-
-  @media all and (min-width: 850px) {
-    display: none;
-  }
-`;
-
 
 
 const Navbar = () => {
@@ -102,34 +93,22 @@ const Navbar = () => {
           </AppLogo>
 
           <NavItem>
-            <NavbarNum href="#about">01.&nbsp;
-              <NavbarText>
-                About
-              </NavbarText>
+            <NavbarNum href="#about">01.&nbsp;<NavbarText>About</NavbarText>
             </NavbarNum>
           </NavItem>
 
           <NavItem>
-            <NavbarNum href="#work">02.&nbsp;
-              <NavbarText>
-                Work
-              </NavbarText>
+            <NavbarNum href="#work">02.&nbsp;<NavbarText>Work</NavbarText>
             </NavbarNum>
           </NavItem>
 
           <NavItem>
-            <NavbarNum href="#experience">03.&nbsp;
-              <NavbarText>
-                Experience
-              </NavbarText>
+            <NavbarNum href="#experience">03.&nbsp;<NavbarText>Experience</NavbarText>
             </NavbarNum>
           </NavItem>
 
           <NavItem>
-            <NavbarNum href="#contact">04.&nbsp;
-              <NavbarText>
-                Contact
-              </NavbarText>
+            <NavbarNum href="#contact">04.&nbsp;<NavbarText>Contact</NavbarText>
             </NavbarNum>
           </NavItem>
 

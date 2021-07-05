@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { RichText, PrimaryButton } from '@styles/Mixins';
@@ -30,10 +30,10 @@ const HTMLContent = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 40%;
+  width: 50%;
   top: 40%;
 
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 850px) {
     top: 40%;
     width: 100%;
   }
@@ -92,14 +92,11 @@ const Intro = () => {
 
   return (
     <>
-
-      <Spline scene={HERO_SCENE} id="hero" />
-
       <CenteredContainer>
+        <Spline scene={HERO_SCENE} id="hero" />
         <HTMLContent>
           <ContentAnimation>
-            <RichText1>Hi
-              <RichText2>, my name is Shane.</RichText2>
+            <RichText1>Hi<RichText2>, my name is Shane.</RichText2>
             </RichText1>
             {typeof window !== 'undefined' && window.innerWidth < 850 ?
               <Description>[ Drag finger to rotate ]</Description>

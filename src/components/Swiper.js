@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 
@@ -62,6 +62,10 @@ const Card = styled.div`
         align-items: start;
         justify-content: center;
     }
+
+    @media all and (max-width: 649px) {
+            width: 80%;
+        }
 `;
 
 const CardImage = styled.div`
@@ -74,6 +78,16 @@ const CardImage = styled.div`
     img {
         width: 100%;
         object-fit: contain;
+
+        @media all and (max-width: 1100px) {
+            width: 65%;
+            padding: 0px;
+        }
+
+        @media all and (max-width: 550px) {
+            width: 80%;
+            padding: 0px;
+        }
     }
 `;
 
@@ -111,16 +125,31 @@ const slides = skills.map((item, i) => {
 });
 
 const Carousel = () => {
+    const [perView, setPerView] = useState('2');
+
+    const onResize = e => {
+        if (e.currentTarget.innerWidth < 650) {
+            setPerView('1');
+        } else {
+            setPerView('2');
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', onResize);
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+        }
+    }, []);
 
     return (
         <Swiper
             key={skills.length}
             observer={true}
             spaceBetween={5}
-            slidesPerView={2}
+            slidesPerView={perView}
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
         >
             {slides}
         </Swiper>

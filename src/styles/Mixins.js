@@ -78,6 +78,10 @@ export const SectionHeadings = css`
   color: white;
   font-size: 3.5rem;
   text-align: start;
+
+  @media all and (max-width: 650px) {
+        font-size: 3.0rem ;
+        }
 `;
 
 export const SectionNums = css`
@@ -86,6 +90,10 @@ export const SectionNums = css`
   color: var(--primaryColor);
   font-size: 1.2rem;
   text-align: start;
+
+  @media all and (max-width: 650px) {
+        font-size: 1rem !important;
+        }
 `;
 
 export const ScenePositioning = css`

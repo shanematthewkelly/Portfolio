@@ -14,6 +14,6 @@ export const Grid = styled.section`
 
 export const GridItem = styled.div`
     /** [Enable & Disable Grid Outline] */
-    /* border: dashed 2px var(--primaryColor); */
+    /* border: var(--border); */
     height: 100vh;
 `;

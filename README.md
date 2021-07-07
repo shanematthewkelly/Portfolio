@@ -14,15 +14,11 @@
 
 ## ToDo (Ignore)
 
-❌ Start on 'About' section [...working on]
+✔️ Start on 'About' section [...working on]
 
 <br>
 
 ❌ Finish mobile menu info
-
-<br>
-
-❌ Continue to optimise
 
 <br>
 

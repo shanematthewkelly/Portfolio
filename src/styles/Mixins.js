@@ -4,10 +4,10 @@ import cursor from '@images/cursor.png';
 export const PrimaryButton = css`
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  border: 3px dashed var(--primaryColor);
+  border: var(--border);
   text-align: center;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   text-decoration: none;
   color: white;
   cursor: url(${cursor}), pointer;
@@ -40,6 +40,7 @@ export const HideOnMobile = css`
 `;
 
 export const RichText = css`
+  font-family: "Lato", sans-serif;
   font-size: 3rem;
   text-align: center;
 
@@ -49,21 +50,22 @@ export const RichText = css`
 `;
 
 export const NavText = css`
-  font-family: "Montserrat", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-decoration: none;
   color: white;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
 
   &:hover {
     color: var(--primaryColor);
-    border-bottom: 2px dashed var(--primaryColor);
+    border-bottom: var(--border);
     padding-bottom: 6px;
     cursor: pointer;
 }
 `;
 
 export const NavNums = css`
+  font-family: "Lato", sans-serif;
   text-transform: uppercase;
   font-size: 0.85rem;
   text-decoration: none;
@@ -71,22 +73,26 @@ export const NavNums = css`
 `;
 
 export const SectionHeadings = css`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Lato'; 
   text-decoration: none;
   color: white;
-  font-size: 1.8rem;
+  font-size: 3.5rem;
+  text-align: start;
 `;
 
-export const SectionNumbers = css`
-  font-size: 1.8rem;
+export const SectionNums = css`
+  font-family: 'Lato'; 
   text-decoration: none;
   color: var(--primaryColor);
+  font-size: 1.2rem;
+  text-align: start;
 `;
 
 export const ScenePositioning = css`
-  width: 100%;
-  height: 100%;
+  width: 140%;
+  height: 140%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 `;

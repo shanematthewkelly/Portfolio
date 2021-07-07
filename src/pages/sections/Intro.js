@@ -50,6 +50,7 @@ const RichText2 = styled.span`
 `;
 
 const Description = styled.h3`
+  font-family: "Ubuntu", sans-serif;
   color: lightgrey;
   font-size: 1rem;
   text-align: center;

@@ -1,13 +1,22 @@
 import { css } from "styled-components";
-import Montserrat from '@fonts/Montserrat/Montserrat-Medium.ttf'
+import Ubuntu from '@fonts/Ubuntu/Ubuntu-Light.ttf';
+import Lato from '@fonts/Lato/Lato-Black.ttf';
 
 const Fonts = css`
 @font-face {
-    font-family: 'Montserrat';
-    src: url(${Montserrat}) format('truetype');
+    font-family: 'Ubuntu';
+    src: url(${Ubuntu}) format('truetype');
     font-style: normal;
-    weight: 500;
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url(${Lato}) format('truetype');
+    font-style: normal;
   }
 `;
+
+
 
 export default Fonts;

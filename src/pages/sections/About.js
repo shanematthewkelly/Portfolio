@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-    SectionNumbers,
-    SectionHeadings,
-    ScenePositioning
-}
-    from '@styles/Mixins';
+import { StaticImage } from 'gatsby-plugin-image';
+import { SectionHeadings, SectionNums } from '@styles/Mixins';
 import { PrimaryButton } from '@styles/Mixins';
 import { Grid, GridItem } from '@components/Layout';
 
-import ABOUT_SCENE from '@scenes/about/scene.json';
-import loadable from '@loadable/component';
+import Carousel from '@components/Swiper';
 
 /**
  *  @ignore
@@ -34,58 +29,52 @@ const AboutContainer = styled.div`
 
 const StyledInfo = styled.div`
 
- p{
-    padding-top: 10px;
-    font-family: 'Montserrat';
-    line-height: 25px;
-  }
-
- ul.tech-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
-    list-style: none;
-    li {
-      position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      /* font-family: 'Montserrat'; */
-      font-size: 0.9rem;
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--primaryColor);
-        font-size: 1rem;
-        line-height: 12px;
-      }
-    }
+ p {
+    padding-top: 15px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-family: 'Ubuntu';
+    color: lightgrey;
   }
 `;
 
-const HeadingNum = styled.h1`
-    ${SectionNumbers}
+const StyledPhoto = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    .wrapper {
+        border: var(--border);
+        height: 305px;
+        width: 304px;
+    }
+
+    .about-photo {
+        margin-left: -30px;
+        margin-top: -30px;
+        box-shadow: var(--box-shadow);
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+            transform:translate(30px,30px);
+            transition: transform 0.5s ease-in-out;
+            box-shadow: none;
+        }
+    }
+`;
+
+const HeadingNum = styled.div`
+    ${SectionNums}
 `;
 
 const Heading = styled.span`
     ${SectionHeadings}
 `;
 
-const SplineDesktopScene = styled.div`
-    ${ScenePositioning}
-`;
-
-const Spline = loadable(() =>
-    import('react-spline')
-        .then((res) =>
-            res.Spline),
-    { ssr: false }
-);
-
 const About = () => {
-    const techs = ['Dart', 'Android', 'React', 'Node', 'Express', 'Vue', 'Laravel', 'Wordpress']
 
     return (
         <>
@@ -93,35 +82,36 @@ const About = () => {
                 <GridItem>
                     <AboutContainer>
                         <StyledInfo>
-                            <div>
-                                <HeadingNum>01.&nbsp;<Heading>About Me</Heading></HeadingNum>
-                            </div>
+                            <HeadingNum>01. ---------------------------------</HeadingNum>
+                            <Heading>About <br /> <span style={{ color: `var(--primaryColor)` }}>Me. </span></Heading>
                             <br />
 
                             <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Nam egestas orci et iaculis iaculis. Nunc
-                                    accumsan augue a mauris mollis egestas.</p>
+                                <p>Hey! My name is Shane and I am a young, enthusiastic software
+                                    engineer based in Dublin, Ireland. I have just graduated from college
+                                    with a Bachelors First-Class Honours degree in Creative Computing at IADT.</p>
 
-                                <p>Nam non nulla ullamcorper, dictum mauris et, mattis
-                                    ligula. Quisque convallis mattis dolor vel tempor.</p>
-
-                                <p>Vestibulum ac quam mollis, volutpat est nec, vulputate
-                                    erat. Suspendisse potenti. Vestibulum faucibus dui
-                                    tortor. In aliquet luctus sapien et facilisis.</p>
+                                <p>Here are several technologies I am experienced in.</p>
                             </div>
-
-                            <ul className="tech-list">
-                                {techs && techs.map((techs, i) => <li key={i}>{techs}</li>)}
-                            </ul>
                         </StyledInfo>
+                        <div>
+                            <Carousel />
+                        </div>
                     </AboutContainer>
                 </GridItem>
 
                 <GridItem>
-                    <SplineDesktopScene>
-                        <Spline scene={ABOUT_SCENE} id="about-spline" />
-                    </SplineDesktopScene>
+                    <StyledPhoto>
+                        <div className="wrapper">
+                            <StaticImage
+                                src='../../images/shane.jpg'
+                                className="about-photo"
+                                width={300}
+                                quality={95}
+                                alt="ShanePhoto"
+                            />
+                        </div>
+                    </StyledPhoto>
                 </GridItem>
             </Grid>
         </>

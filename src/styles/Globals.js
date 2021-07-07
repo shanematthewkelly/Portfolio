@@ -21,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: var(--secondaryColor);
+  background-color: var(--canvas);
 
   &.blur {
     overflow: hidden;
@@ -92,9 +92,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 #about-spline {
-  width: 140% !important;
-  height: 140% !important;
-  margin-left: -135px;
+  width: 100% !important;
+  height: 100% !important;
+  margin-left: -120px;
 }
 
 `;

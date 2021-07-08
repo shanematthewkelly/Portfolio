@@ -7,7 +7,7 @@ export const Grid = styled.section`
     padding: 10px;
     gap: 0.8rem;
 
-    @media all and (max-width: 500px) {
+    @media all and (max-width: 600px) {
         display: block;
         }
 `;
@@ -15,5 +15,4 @@ export const Grid = styled.section`
 export const GridItem = styled.div`
     /** [Enable & Disable Grid Outline] */
     /* border: var(--border); */
-    height: 100vh;
 `;

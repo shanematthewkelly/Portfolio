@@ -39,14 +39,36 @@ export const HideOnMobile = css`
   }
 `;
 
-export const RichText = css`
+export const Title = css`
   font-family: "Lato", sans-serif;
-  font-size: 3rem;
+  font-size: 6rem;
   text-align: center;
+  text-transform: uppercase;
 
-  @media all and (max-device-width: 500px) {
-    font-size: 1.8rem;
-}
+  @media all and (max-width: 1000px) {
+    font-size: 4.5rem;
+  }
+
+  @media all and (max-width: 600px) {
+    font-size: 3.6rem;
+  }
+`;
+
+export const SecondaryTitle = css`
+  font-family: "Lato", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -25px;
+
+  @media all and (max-width: 1000px) {
+    font-size: 2rem;
+    margin-top: -15px;
+  }
+
+  @media all and (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const NavText = css`

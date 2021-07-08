@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { RichText, PrimaryButton } from '@styles/Mixins';
+import { Title, SecondaryTitle, PrimaryButton } from '@styles/Mixins';
 import styled from 'styled-components';
 import loadable from '@loadable/component'
 import HERO_SCENE from '@scenes/hero/scene.json';
@@ -31,34 +31,22 @@ const HTMLContent = styled.div`
   justify-content: center;
   position: absolute;
   width: 50%;
-  top: 40%;
+  top: 30%;
 
-  @media all and (max-width: 850px) {
-    top: 40%;
+  @media all and (max-width: 1200px) {
     width: 100%;
+    top: 40%;
   }
 `;
 
-const RichText1 = styled.h1`
-  ${RichText};
-  color: rgb(55, 210, 117);
-`;
-
-const RichText2 = styled.span`
-  ${RichText};
+const Name = styled.span`
+  ${Title};
   color: #fff;
 `;
 
-const Description = styled.h3`
-  font-family: "Ubuntu", sans-serif;
-  color: lightgrey;
-  font-size: 1rem;
-  text-align: center;
-
-  @media all and (max-width: 500px) {
-    margin-top: 8px;
-    font-size: 0.8rem;
-  }
+const Stack = styled.h1`
+  ${SecondaryTitle}
+  color: rgb(55, 210, 117);
 `;
 
 const ContactButton = styled.div`
@@ -79,6 +67,10 @@ const NextScrollArrow = styled.div`
   margin-bottom: 1.3rem;
   left: 48.5%;
   animation: ${FadeIn} 2s ease-in forwards;
+
+  @media all and (max-width: 600px) {
+    margin-bottom: 30px;
+  }
 `;
 
 /** Loading 'React-Spline' client-side in a seperate bundle with loadable components (requires window object) */
@@ -97,13 +89,8 @@ const Intro = () => {
         <Spline scene={HERO_SCENE} id="hero" />
         <HTMLContent>
           <ContentAnimation>
-            <RichText1>Hi<RichText2>, my name is Shane.</RichText2>
-            </RichText1>
-            {typeof window !== 'undefined' && window.innerWidth < 850 ?
-              <Description>[ Drag finger to rotate ]</Description>
-              :
-              <Description>[ Drag mouse to rotate ]</Description>
-            }
+            <Name>Shane Kelly</Name>
+            <Stack>Full-Stack Developer</Stack>
           </ContentAnimation>
           <ContactButton>Get in touch</ContactButton>
         </HTMLContent>

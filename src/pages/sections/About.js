@@ -25,16 +25,25 @@ const AboutContainer = styled.div`
     width: 100%;
     height: 100%;
     padding: 3rem;
+
+    @media all and (max-width: 600px) {
+        padding-left: 2rem;
+    }
 `;
 
 const StyledInfo = styled.div`
 
  p {
     padding-top: 15px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6rem;
     font-family: 'Ubuntu';
     color: lightgrey;
+
+    a {
+        color: var(--primaryColor);
+        text-decoration: none;
+    }
   }
 `;
 
@@ -46,10 +55,19 @@ const StyledPhoto = styled.div`
     height: 100%;
     width: 100%;
 
+    @media all and (max-width: 600px) {
+        margin-top: 40px;
+    }
+
     .wrapper {
         border: var(--border);
         height: 305px;
         width: 304px;
+
+        @media all and (max-width: 600px) {
+            height: 250px;
+            width: 250px;
+        }
     }
 
     .about-photo {
@@ -57,6 +75,10 @@ const StyledPhoto = styled.div`
         margin-top: -30px;
         box-shadow: var(--box-shadow);
         transition: 0.5s ease-in-out;
+
+        @media all and (max-width: 600px) {
+            width: 246px;
+        }
 
         &:hover {
             transform:translate(30px,30px);
@@ -75,6 +97,7 @@ const Heading = styled.span`
 `;
 
 const About = () => {
+    const IADT = 'https://iadt.ie/'
 
     return (
         <>
@@ -89,9 +112,10 @@ const About = () => {
                             <div>
                                 <p>Hey! My name is Shane and I am a young, enthusiastic software
                                     engineer based in Dublin, Ireland. I have just graduated from college
-                                    with a Bachelors First-Class Honours degree in Creative Computing at IADT.</p>
+                                    with a Bachelors First-Class Honours degree in Creative Computing at
+                                    <a href={IADT}> IADT.</a></p>
 
-                                <p>Here are several technologies I am experienced in.</p>
+                                <p>Below are some frameworks, technologies and tools I have experience with.</p>
                             </div>
                         </StyledInfo>
                         <div>

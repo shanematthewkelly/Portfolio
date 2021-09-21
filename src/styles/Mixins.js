@@ -40,7 +40,7 @@ export const HideOnMobile = css`
 `;
 
 export const Title = css`
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-lato);
   font-size: 6rem;
   text-align: center;
   text-transform: uppercase;
@@ -55,7 +55,7 @@ export const Title = css`
 `;
 
 export const SecondaryTitle = css`
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-lato);
   font-size: 2.5rem;
   text-align: center;
   text-transform: uppercase;
@@ -72,7 +72,7 @@ export const SecondaryTitle = css`
 `;
 
 export const NavText = css`
-  font-family: "Ubuntu", sans-serif;
+  font-family: var(--font-ubuntu);
   text-decoration: none;
   color: white;
   font-size: 0.9rem;
@@ -87,7 +87,7 @@ export const NavText = css`
 `;
 
 export const NavNums = css`
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-lato);
   text-transform: uppercase;
   font-size: 0.85rem;
   text-decoration: none;
@@ -95,7 +95,7 @@ export const NavNums = css`
 `;
 
 export const SectionHeadings = css`
-  font-family: 'Lato'; 
+  font-family: var(--font-lato); 
   text-decoration: none;
   color: white;
   font-size: 3.5rem;
@@ -107,7 +107,7 @@ export const SectionHeadings = css`
 `;
 
 export const SectionNums = css`
-  font-family: 'Lato'; 
+  font-family: var(--font-lato); 
   text-decoration: none;
   color: var(--primaryColor);
   font-size: 1.2rem;

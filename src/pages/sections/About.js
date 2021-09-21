@@ -37,7 +37,7 @@ const StyledInfo = styled.div`
     padding-top: 15px;
     font-size: 1.1rem;
     line-height: 1.6rem;
-    font-family: 'Ubuntu';
+    font-family: var(--font-ubuntu);
     color: lightgrey;
 
     a {

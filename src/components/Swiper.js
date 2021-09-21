@@ -17,8 +17,9 @@ import cPanel from '@images/cpanel.png';
 import three from '@images/three.png';
 import javascript from '@images/javascript.png';
 
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
+import 'swiper/css/bundle'
+import "swiper/css";
+import 'swiper/css/pagination'
 
 const skills = [
 
@@ -163,13 +164,13 @@ const CardImage = styled.div`
 
 const CardTitle = styled.h4`
     color: var(--primaryColor);
-    font-family: 'Lato';
+    font-family: var(--font-lato);
     font-size: 1rem;
 `;
 
 const CardBody = styled.p`
     font-size: 0.9rem;
-    font-family: 'Ubuntu';
+    font-family: var(--font-ubuntu);
 `;
 
 const slides = skills.map((item, i) => {

@@ -9,6 +9,9 @@ const Variables = css`
         --button-hover: rgba(55, 210, 117, 0.082);
         --card-background: rgb(35, 35, 35);
 
+        --font-ubuntu: 'Ubuntu', 'sans-serif';
+        --font-lato: 'Lato', 'sans-serif';
+
         --nav-scroll: rgb(25, 25, 25, 0.9);
         --nav-scroll-shadow: 0px 4px 14px 0px #111111;
 
